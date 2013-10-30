@@ -1,0 +1,37 @@
+<h1>Listing records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet name</th>
+      <th>Pet type</th>
+      <th>Breed</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Last visit date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.pet_name %></td>
+        <td><%= record.pet_type %></td>
+        <td><%= record.breed %></td>
+        <td><%= record.age %></td>
+        <td><%= record.weight %></td>
+        <td><%= record.last_visit_date %></td>
+        <td><%= link_to 'Show', record %></td>
+        <td><%= link_to 'Edit', edit_record_path(record) %></td>
+        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Record', new_record_path %>

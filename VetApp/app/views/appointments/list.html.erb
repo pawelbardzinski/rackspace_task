@@ -1,0 +1,7 @@
+<h1>Appointments</h1>
+
+<% @appointments.each do |appointment| %>
+    <h3>Pet Name: <%= appointment.pet %></h3>
+    <p>Next Visit: <%= appointment.date_of_visit %></p>
+    <p>Visit Reason: <%= appointment.visit_reason %></p>
+<% end %>

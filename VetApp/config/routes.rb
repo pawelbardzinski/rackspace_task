@@ -1,4 +1,14 @@
 VetApp::Application.routes.draw do
+  root 'welcome#start'
+  resources :records
+  resources :appointments
+  resources :doctors
+  
+  get 'doctors' => 'doctor#index'
+  get 'appointment' => 'appointments#index'
+  get 'appointment/list' => 'appointments#list', :as => "list"
+  get 'records' => 'record#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
